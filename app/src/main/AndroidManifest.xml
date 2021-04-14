@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.proyecto.vista_principal">
+    package="com.proyecto">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VistaPrincipal">
-        <activity android:name=".MainActivity">
+        <activity android:name=".admin.ReservasPendientes"></activity>
+        <activity android:name=".admin.CrearCanchas" />
+        <activity android:name=".admin.MainActivity" />
+        <activity android:name=".cliente.reservas" />
+        <activity android:name=".cliente.busqueda" />
+        <activity android:name=".cliente.MainActivity" />
+        <activity android:name=".vista_principal.Registro" />
+        <activity android:name=".vista_principal.Login" />
+        <activity android:name=".vista_principal.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
