@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".admin.ReservasPendientes"></activity>
+        <activity android:name=".admin.ReservasPendientes"/>
         <activity android:name=".admin.CrearCanchas" />
         <activity android:name=".admin.MainActivity" />
         <activity android:name=".cliente.reservas" />
