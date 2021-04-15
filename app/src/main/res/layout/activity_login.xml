@@ -16,13 +16,14 @@
         tools:layout_editor_absoluteY="0dp">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgIcon"
             android:layout_width="wrap_content"
             android:layout_height="121dp"
             android:layout_marginBottom="50dp"
             app:srcCompat="@drawable/cancha" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/txtUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -37,7 +38,7 @@
             android:padding="15dp" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/txtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -47,32 +48,33 @@
             android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawablePadding="5dp"
             android:ems="10"
-            android:hint="@string/contrase_a"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="15dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnInicio"
             android:layout_width="254dp"
             android:layout_height="56dp"
             android:layout_margin="10dp"
             android:backgroundTint="@color/colorWhite"
             android:fontFamily="sans-serif"
             android:padding="10dp"
-            android:text="Iniciar Sesion"
+            android:text="@string/btnInicio"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@color/black"
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnRegistro"
             android:layout_width="256dp"
             android:layout_height="56dp"
             android:layout_margin="10dp"
             android:backgroundTint="@color/colorWhite"
             android:fontFamily="sans-serif"
+            android:onClick="enviarRegistro"
             android:padding="10dp"
-            android:text="Registro"
+            android:text="@string/btnRegistro"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@color/black"
             android:textSize="18sp" />

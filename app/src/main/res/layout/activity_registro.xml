@@ -7,4 +7,113 @@
     android:layout_height="match_parent"
     tools:context=".vista_principal.Registro">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <Button
+      android:id="@+id/btnRegistrarse"
+      android:layout_width="254dp"
+      android:layout_height="56dp"
+      android:layout_margin="10dp"
+      android:backgroundTint="@color/colorWhite"
+      android:fontFamily="sans-serif"
+      android:padding="10dp"
+      android:text="@string/registrarse"
+      android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+      android:textColor="@color/black"
+      android:textSize="18sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.496"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/txtCelular"
+      app:layout_constraintVertical_bias="0.388" />
+
+  <EditText
+      android:id="@+id/txtUserRegistro"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:layout_marginBottom="12dp"
+      android:autofillHints=""
+      android:background="@drawable/border_text"
+      android:backgroundTint="@color/gris"
+      android:drawableStart="@drawable/ic_baseline_person_24"
+      android:drawablePadding="5dp"
+      android:ems="10"
+      android:hint="@string/usuario"
+      android:inputType="textPersonName"
+      android:padding="15dp"
+      app:layout_constraintBottom_toTopOf="@+id/txtPasswordRegistro"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <EditText
+      android:id="@+id/txtPasswordRegistro"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:layout_marginBottom="4dp"
+      android:autofillHints=""
+      android:background="@drawable/border_text"
+      android:backgroundTint="@color/gris"
+      android:drawableStart="@drawable/ic_baseline_lock_24"
+      android:drawablePadding="5dp"
+      android:ems="10"
+      android:hint="@string/password"
+      android:inputType="textPassword"
+      android:padding="15dp"
+      app:layout_constraintBottom_toTopOf="@+id/txtCorreo"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <EditText
+      android:id="@+id/txtCelular"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:autofillHints=""
+      android:background="@drawable/border_text"
+      android:backgroundTint="@color/gris"
+      android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
+      android:drawablePadding="5dp"
+      android:ems="10"
+      android:hint="@string/celular"
+      android:inputType="textPassword"
+      android:padding="15dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.573" />
+
+  <EditText
+      android:id="@+id/txtCorreo"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:layout_marginBottom="4dp"
+      android:autofillHints=""
+      android:background="@drawable/border_text"
+      android:backgroundTint="@color/gris"
+      android:drawableStart="@drawable/ic_baseline_email_24"
+      android:drawablePadding="5dp"
+      android:ems="10"
+      android:hint="@string/correo"
+      android:inputType="textPassword"
+      android:padding="15dp"
+      app:layout_constraintBottom_toTopOf="@+id/txtCelular"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/imgIcon2"
+      android:layout_width="241dp"
+      android:layout_height="70dp"
+      android:layout_marginTop="56dp"
+      app:layout_constraintBottom_toTopOf="@+id/txtUserRegistro"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.637"
+      app:srcCompat="@drawable/cancha" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
