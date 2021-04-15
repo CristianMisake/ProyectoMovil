@@ -17,7 +17,8 @@
         <activity android:name=".cliente.MainActivity" />
         <activity android:name=".vista_principal.Registro" />
         <activity android:name=".vista_principal.Login" />
-        <activity android:name=".vista_principal.MainActivity">
+        <activity android:name=".vista_principal.MainActivity"/>
+        <activity android:name=".vista_principal.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
