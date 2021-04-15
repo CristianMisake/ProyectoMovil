@@ -17,9 +17,8 @@ public class Login extends AppCompatActivity {
     }
 
     public void enviarRegistro(View view) {
-        //Invocar a la actividad registro
+        //Invocar a la tercera actividad
         Intent intent = new Intent(this, Registro.class);
         startActivity(intent);
     }
 }
-
