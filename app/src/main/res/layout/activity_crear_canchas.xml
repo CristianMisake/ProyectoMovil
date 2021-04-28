@@ -4,6 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".admin.CrearCanchas">
+
+    <Button
+        android:id="@+id/btnRegistrarse3"
+        android:layout_width="254dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/colorWhite"
+        android:fontFamily="sans-serif"
+        android:onClick="guardarCancha"
+        android:padding="10dp"
+        android:text="@string/registrarse"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDescripcion" />
+
+    <EditText
+        android:id="@+id/editDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:autofillHints=""
+        android:background="@drawable/border_text"
+        android:backgroundTint="@color/gris"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="@string/descripcion"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editHorario" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgIcon3"
+        android:layout_width="241dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cancha" />
+
+    <EditText
+        android:id="@+id/editHorario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:autofillHints=""
+        android:background="@drawable/border_text"
+        android:backgroundTint="@color/gris"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="@string/horario"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNombre" />
+
+    <EditText
+        android:id="@+id/editNombre"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_margin="10dp"
+        android:autofillHints=""
+        android:background="@drawable/border_text"
+        android:backgroundTint="@color/gris"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="@string/nombre"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

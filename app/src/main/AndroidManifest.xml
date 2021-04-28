@@ -9,15 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".admin.ReservasPendientes"/>
+        <activity android:name=".admin.ListaCanchas" />
+        <activity android:name=".admin.ReservasPendientes" />
         <activity android:name=".admin.CrearCanchas" />
-        <activity android:name=".admin.MainActivity" />
+        <activity android:name=".admin.MainAdmin" />
         <activity android:name=".cliente.reservas" />
         <activity android:name=".cliente.busqueda" />
-        <activity android:name=".cliente.MainActivity" />
+        <activity android:name=".cliente.MainClient" />
         <activity android:name=".vista_principal.Registro" />
         <activity android:name=".vista_principal.Login" />
-        <activity android:name=".vista_principal.MainActivity"/>
+        <activity android:name=".vista_principal.MainActivity" />
         <activity android:name=".vista_principal.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -59,6 +59,7 @@
             android:layout_margin="10dp"
             android:backgroundTint="@color/colorWhite"
             android:fontFamily="sans-serif"
+            android:onClick="enviarAdmin"
             android:padding="10dp"
             android:text="@string/btnInicio"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"

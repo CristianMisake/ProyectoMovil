@@ -11,4 +11,13 @@
     <string name="correo">Email</string>
     <string name="celular">Celular</string>
     <string name="registrarse">Registrarse</string>
+    <string name="guardar">Guardar</string>
+    <string name="nombre">Nombre</string>
+    <string name="horario">Horario</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="crear_canchas">Crear Canchas</string>
+    <string name="chanchas">Chanchas</string>
+    <string name="reservas_pendientes">Reservas Pendientes</string>
+    <string name="cerrar_session">Cerrar Session</string>
+    <string name="content_descripcion_img">Imagen</string>
 </resources>
