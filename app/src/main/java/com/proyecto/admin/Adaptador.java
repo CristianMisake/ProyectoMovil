@@ -1,7 +1,6 @@
 package com.proyecto.admin;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +11,13 @@ import android.widget.TextView;
 import com.proyecto.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Adaptador extends BaseAdapter {
     private Context context;
-    private ArrayList<Cancha> canchas;
+    private List<Cancha> canchas;
 
-    public Adaptador(Context context, ArrayList<Cancha> canchas) {
+    public Adaptador(Context context, List<Cancha> canchas) {
         this.context = context;
         this.canchas = canchas;
     }

@@ -7,6 +7,45 @@
     android:background="@color/white"
     tools:context=".admin.CrearCanchas">
 
+    <EditText
+        android:id="@+id/editDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:autofillHints=""
+        android:background="@drawable/border_text"
+        android:backgroundTint="@color/gris"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="@string/direccion"
+        android:inputType="text"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editHorario" />
+
+    <EditText
+        android:id="@+id/editPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="80dp"
+        android:autofillHints=""
+        android:background="@drawable/border_text"
+        android:backgroundTint="@color/gris"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="@string/precio"
+        android:inputType="number"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDescripcion" />
+
     <Button
         android:id="@+id/btnRegistrarse3"
         android:layout_width="254dp"
@@ -24,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDescripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/editPrice" />
 
     <EditText
         android:id="@+id/editDescripcion"
@@ -38,12 +77,12 @@
         android:drawablePadding="5dp"
         android:ems="10"
         android:hint="@string/descripcion"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editHorario" />
+        app:layout_constraintTop_toBottomOf="@+id/editDireccion" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imgIcon3"
@@ -68,7 +107,7 @@
         android:drawablePadding="5dp"
         android:ems="10"
         android:hint="@string/horario"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.157"
@@ -87,7 +126,7 @@
         android:drawablePadding="5dp"
         android:ems="10"
         android:hint="@string/nombre"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

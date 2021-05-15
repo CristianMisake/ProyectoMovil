@@ -20,4 +20,7 @@
     <string name="reservas_pendientes">Reservas Pendientes</string>
     <string name="cerrar_session">Cerrar Session</string>
     <string name="content_descripcion_img">Imagen</string>
+    <string name="precio">Precio</string>
+    <string name="direccion">Direccion</string>
+    <string name="eliminarcancha">Eliminar Cancha</string>
 </resources>
