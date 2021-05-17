@@ -1,4 +1,4 @@
-package com.proyecto.admin;
+package com.proyecto.models.cancha;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
@@ -54,7 +54,7 @@ public class Cancha {
     public void setAddress(String address) { this.address = address; }
     public void setSchedule(String schedule) { this.schedule = schedule; }
     public void setDescription(String description) { this.description = description; }
-    public void setPrice(int price) { this.price = price; }
+    public void setPrice(long price) { this.price = price; }
     public void setUrlImg(int urlImg) { this.urlImg = urlImg; }
     public void setEstado(int estado) { this.estado = estado; }
 }

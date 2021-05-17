@@ -1,29 +1,31 @@
-package com.proyecto.admin;
+package com.proyecto.models.cancha;
 
 import android.content.Context;
 
 import androidx.room.Room;
+
+import com.proyecto.models.reserva.ReservaCancha;
 
 import java.util.List;
 
 import database.CanchaDao;
 import database.CanchaDataBase;
 
-public class CanchasLab implements CanchaDao {
-    private static CanchasLab sCanchasLab;
+public class CanchaLab implements CanchaDao {
+    private static CanchaLab sCanchasLab;
 
     private CanchaDao sCanchaDao;
 
-    private CanchasLab(Context context) {
+    private CanchaLab(Context context) {
         Context appContext = context.getApplicationContext();
         CanchaDataBase dataBase = Room.databaseBuilder(appContext, CanchaDataBase.class, "canchas")
                 .allowMainThreadQueries().build();
         sCanchaDao = dataBase.getCanchaDao();
     }
 
-    public static CanchasLab get(Context context) {
+    public static CanchaLab get(Context context) {
         if (sCanchasLab == null) {
-            sCanchasLab = new CanchasLab(context);
+            sCanchasLab = new CanchaLab(context);
         }
         return sCanchasLab;
     }
@@ -31,6 +33,11 @@ public class CanchasLab implements CanchaDao {
     @Override
     public List<Cancha> getCanchas() {
         return sCanchaDao.getCanchas();
+    }
+
+    @Override
+    public List<Cancha> getCanchaById(String uid) {
+        return sCanchaDao.getCanchaById(uid);
     }
 
     @Override

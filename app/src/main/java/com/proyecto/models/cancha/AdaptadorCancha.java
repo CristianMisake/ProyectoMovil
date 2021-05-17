@@ -1,4 +1,4 @@
-package com.proyecto.admin;
+package com.proyecto.models.cancha;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -89,8 +89,8 @@ public class AdaptadorCancha extends RecyclerView.Adapter<AdaptadorCancha.MyView
             descripcion = (TextView) itemView.findViewById(R.id.txtDecriptionCancha);
             imageFoto = (ImageView) itemView.findViewById(R.id.imgCancha);
             schedule = (TextView) itemView.findViewById(R.id.txtScheduleCancha);
-            eliminar = (Button) itemView.findViewById(R.id.btnEliminarCancha);
-            editar = (Button) itemView.findViewById(R.id.btnEditarCancha);
+            eliminar = (Button) itemView.findViewById(R.id.btnEliminar);
+            editar = (Button) itemView.findViewById(R.id.btnEditar);
         }
     }
 }
