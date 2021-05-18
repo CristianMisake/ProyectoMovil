@@ -25,5 +25,5 @@ public interface CanchaDao {
     void updateCancha(Cancha cancha);
 
     @Query("UPDATE canchas SET estado = 0 WHERE idCancha = :uid")
-    void deleteCanchas(String uid);
+    void deleteCancha(String uid);
 }

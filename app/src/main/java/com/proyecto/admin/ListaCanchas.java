@@ -75,7 +75,7 @@ public class ListaCanchas extends AppCompatActivity {
     }
 
     private void deleteBDCanchas(Cancha cancha) {
-        nCanchasLab.deleteCanchas(cancha.getIdCancha());
+        nCanchasLab.deleteCancha(cancha.getIdCancha());
         leerBDCanchas();
         adapter.notifyDataSetChanged(); //Notificar los cambios en el modelo
         Toast.makeText(this,"Eliminado: " + cancha.getName(), Toast.LENGTH_SHORT).show();

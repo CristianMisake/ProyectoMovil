@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey;
 import static androidx.room.ForeignKey.CASCADE;
 
 import com.proyecto.models.cancha.Cancha;
+import com.proyecto.models.usuario.Usuario;
 
 import java.util.UUID;
 
@@ -22,6 +23,11 @@ public class Reserva {
     private int horas;
     @ColumnInfo(name = "fecha")
     private String fecha;
+    @ForeignKey(entity = Usuario.class,
+            parentColumns = "idUsuario",
+            childColumns = "idUsuarioFk",
+            onDelete = CASCADE
+    )
     @ColumnInfo(name = "idUsuarioFk")
     private String idUsuarioFk;
     @ForeignKey(entity = Cancha.class,
@@ -31,7 +37,7 @@ public class Reserva {
     )
     @ColumnInfo(name = "idCanchaFk")
     private String idCanchaFk;
-    @ColumnInfo(name = "estado")
+    @ColumnInfo(name = "estadoReserva")
     private int estado;
 
     public Reserva(int horas, String fecha, String idUsuarioFk, String idCanchaFk) {

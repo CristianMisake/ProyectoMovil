@@ -20,15 +20,20 @@
 
         <TextView
             android:id="@+id/txtNameCanchaR"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/txtNameUsuarioR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/txtPriceCanchaR"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:textColor="@color/black"
@@ -41,7 +46,7 @@
 
         <TextView
             android:id="@+id/txtHorasReserva"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5sp"
             android:textColor="@color/black"
@@ -63,6 +68,7 @@
         <Button
             android:id="@+id/btnRechazar"
             android:layout_width="wrap_content"
+            android:layout_marginTop="20sp"
             android:layout_height="50dp"
             android:text="R" />
     </LinearLayout>

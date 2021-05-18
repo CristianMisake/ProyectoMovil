@@ -13,14 +13,20 @@ import java.util.List;
 @Dao
 public interface ReservaDao {
 
-    @Query("SELECT R.idReserva, R.fecha, R.horas, C.nombre, C.price, C.urlImg " +
+    @Query("SELECT R.idReserva, R.fecha, R.horas, C.nombre, C.price, C.urlImg, " +
+            "RE.primerNombre, RE.segundoNombre, RE.primerApellido, RE.segundoApellido " +
             "FROM reservas R INNER JOIN canchas C ON C.idCancha = R.idCanchaFk " +
-            "WHERE R.estado = 1")
+            "INNER JOIN usuarios U ON U.idUsuario = R.idUsuarioFk " +
+            "INNER JOIN registros RE ON RE.idRegistro = U.idRegistroFk " +
+            "WHERE R.estadoReserva = 1")
     List<ReservaCancha> getReservas();
 
-    @Query("SELECT R.idReserva, R.fecha, R.horas, C.nombre, C.price, C.urlImg " +
+    @Query("SELECT R.idReserva, R.fecha, R.horas, C.nombre, C.price, C.urlImg, " +
+            "RE.primerNombre, RE.segundoNombre, RE.primerApellido, RE.segundoApellido " +
             "FROM reservas R INNER JOIN canchas C ON C.idCancha = R.idCanchaFk " +
-            "WHERE R.estado = 1 AND R.idReserva = :uid")
+            "INNER JOIN usuarios U ON U.idUsuario = R.idUsuarioFk " +
+            "INNER JOIN registros RE ON RE.idRegistro = U.idRegistroFk " +
+            "WHERE R.estadoReserva = 1 AND R.idReserva = :uid")
     List<ReservaCancha> getReservaById(String uid);
 
     @Insert
@@ -29,9 +35,9 @@ public interface ReservaDao {
     @Update
     void updateReserva(Reserva reserva);
 
-    @Query("UPDATE reservas SET estado = 2 WHERE idReserva = :uid")
+    @Query("UPDATE reservas SET estadoReserva = 2 WHERE idReserva = :uid")
     void acceptReserva(String uid);
 
-    @Query("UPDATE reservas SET estado = 0 WHERE idReserva = :uid")
+    @Query("UPDATE reservas SET estadoReserva = 0 WHERE idReserva = :uid")
     void rejectReserva(String uid);
 }

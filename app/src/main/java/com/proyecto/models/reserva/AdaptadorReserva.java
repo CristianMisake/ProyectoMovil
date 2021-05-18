@@ -45,8 +45,14 @@ public class AdaptadorReserva extends RecyclerView.Adapter<AdaptadorReserva.MyVi
     @Override
     public void onBindViewHolder(@NonNull AdaptadorReserva.MyViewHolder holder, int position) {
         ReservaCancha reservaActual = listadoReservas.get(position);
+        String nameUsuario = reservaActual.getPrimerNombre() + " "
+                + reservaActual.getSegundoNombre() + " " + reservaActual.getPrimerApellido()
+                + " " + reservaActual.getSegundoApellido();
+        String price = "precio: " + reservaActual.getPrice();
+
         holder.name.setText(reservaActual.getNombre());
-        holder.price.setText("precio: " + reservaActual.getPrice());
+        holder.nameUsuario.setText(nameUsuario);
+        holder.price.setText(price);
         holder.fecha.setText(reservaActual.getFecha());
         holder.horas.setText(reservaActual.getHoras());
         holder.reserva = reservaActual;
@@ -71,6 +77,7 @@ public class AdaptadorReserva extends RecyclerView.Adapter<AdaptadorReserva.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView name;
+        public TextView nameUsuario;
         public TextView price;
         public TextView fecha;
         public TextView horas;
@@ -81,6 +88,7 @@ public class AdaptadorReserva extends RecyclerView.Adapter<AdaptadorReserva.MyVi
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.txtNameCanchaR);
+            nameUsuario = (TextView) itemView.findViewById(R.id.txtNameUsuarioR);
             price = (TextView) itemView.findViewById(R.id.txtPriceCanchaR);
             fecha = (TextView) itemView.findViewById(R.id.txtFechaReserva);
             horas = (TextView) itemView.findViewById(R.id.txtHorasReserva);

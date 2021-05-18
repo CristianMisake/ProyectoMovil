@@ -51,7 +51,7 @@ public class CanchaLab implements CanchaDao {
     }
 
     @Override
-    public void deleteCanchas(String uid) {
-        sCanchaDao.deleteCanchas(uid);
+    public void deleteCancha(String uid) {
+        sCanchaDao.deleteCancha(uid);
     }
 }
