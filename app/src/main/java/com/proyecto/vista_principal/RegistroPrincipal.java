@@ -44,6 +44,8 @@ public class RegistroPrincipal extends AppCompatActivity {
 
         String idRegistro = insertRegistroBD(primerNombre, segundoNombre, primerApellido, segundoApellido, correo, celular);
         insertUsuarioBD(usuario, password, idRegistro);
+
+        finish();
     }
 
     private String insertRegistroBD(String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String correo, long celular) {

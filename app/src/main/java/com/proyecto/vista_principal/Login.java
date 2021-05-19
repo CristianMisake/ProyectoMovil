@@ -27,8 +27,8 @@ public class Login extends AppCompatActivity {
     }
 
     public void loguearse(View view) {
-        EditText editUsuario = findViewById(R.id.txtUserRegistro);
-        EditText editPassword = findViewById(R.id.txtPasswordRegistro);
+        EditText editUsuario = findViewById(R.id.txtUser);
+        EditText editPassword = findViewById(R.id.txtPassword);
 
         String usuario = editUsuario.getText().toString();
         String password = editPassword.getText().toString();

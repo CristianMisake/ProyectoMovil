@@ -29,8 +29,6 @@ public class MainAdmin extends AppCompatActivity {
     }
 
     public void goCerrarSession(View view) {
-        //Invocar a la tercera actividad
-        Intent intent = new Intent(this, ReservasPendientes.class);
-        startActivity(intent);
+        finish();
     }
 }
