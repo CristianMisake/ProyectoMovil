@@ -27,4 +27,6 @@
     <string name="precio">Precio</string>
     <string name="direccion">Direccion</string>
     <string name="eliminarcancha">Eliminar Cancha</string>
+    <string name="reservacliente">Reserva</string>
+    <string name="btnreservarcliente">R</string>
 </resources>

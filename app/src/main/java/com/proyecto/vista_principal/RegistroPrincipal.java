@@ -2,6 +2,7 @@ package com.proyecto.vista_principal;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -40,12 +41,20 @@ public class RegistroPrincipal extends AppCompatActivity {
         String usuario = editUsuario.getText().toString();
         String password = editPassword.getText().toString();
         String correo = editCorreo.getText().toString();
-        long celular = Long.parseLong(editCelular.getText().toString());
+        String celularstring = editCelular.getText().toString();
 
-        String idRegistro = insertRegistroBD(primerNombre, segundoNombre, primerApellido, segundoApellido, correo, celular);
-        insertUsuarioBD(usuario, password, idRegistro);
+        if (TextUtils.isEmpty(primerNombre) || TextUtils.isEmpty(segundoNombre) || TextUtils.isEmpty(primerApellido)
+                || TextUtils.isEmpty(segundoApellido) || TextUtils.isEmpty(usuario) || TextUtils.isEmpty(password) || TextUtils.isEmpty(correo)
+                || TextUtils.isEmpty(celularstring)) {
+            Toast.makeText(this,"Por favor llene todos los campos.", Toast.LENGTH_LONG).show();
+        }else {
+            long celular = Long.parseLong(celularstring);
 
-        finish();
+            String idRegistro = insertRegistroBD(primerNombre, segundoNombre, primerApellido, segundoApellido, correo, celular);
+            insertUsuarioBD(usuario, password, idRegistro);
+
+            finish();
+        }
     }
 
     private String insertRegistroBD(String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String correo, long celular) {

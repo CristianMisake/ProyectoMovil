@@ -92,7 +92,7 @@ public class AdaptadorReserva extends RecyclerView.Adapter<AdaptadorReserva.MyVi
             price = (TextView) itemView.findViewById(R.id.txtPriceCanchaR);
             fecha = (TextView) itemView.findViewById(R.id.txtFechaReserva);
             horas = (TextView) itemView.findViewById(R.id.txtHorasReserva);
-            aceptar = (Button) itemView.findViewById(R.id.btnAceptar);
+            aceptar = (Button) itemView.findViewById(R.id.btnReservar);
             rechazar = (Button) itemView.findViewById(R.id.btnRechazar);
         }
     }
