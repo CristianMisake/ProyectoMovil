@@ -20,9 +20,9 @@
     <string name="horario">Horario</string>
     <string name="descripcion">Descripcion</string>
     <string name="crear_canchas">Crear Canchas</string>
-    <string name="chanchas">Chanchas</string>
+    <string name="canchas">Canchas</string>
     <string name="reservas_pendientes">Reservas Pendientes</string>
-    <string name="cerrar_session">Cerrar Session</string>
+    <string name="cerrar_sesion">Cerrar Sesion</string>
     <string name="content_descripcion_img">Imagen</string>
     <string name="precio">Precio</string>
     <string name="direccion">Direccion</string>

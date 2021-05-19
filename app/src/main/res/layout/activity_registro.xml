@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".vista_principal.Registro">
+    tools:context=".vista_principal.RegistroPrincipal">
 
   <EditText
-      android:id="@+id/txtUserRegistro7"
+      android:id="@+id/txtSegundoApellido"
       android:layout_width="226dp"
       android:layout_height="51dp"
       android:layout_marginBottom="16dp"
@@ -28,7 +28,7 @@
       app:layout_constraintStart_toStartOf="parent" />
 
   <EditText
-      android:id="@+id/txtUserRegistro6"
+      android:id="@+id/txtPrimerApellido"
       android:layout_width="226dp"
       android:layout_height="51dp"
       android:layout_marginBottom="16dp"
@@ -42,13 +42,13 @@
       android:inputType="textPersonName"
       android:padding="15dp"
       android:textSize="18sp"
-      app:layout_constraintBottom_toTopOf="@+id/txtUserRegistro7"
+      app:layout_constraintBottom_toTopOf="@+id/txtSegundoApellido"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.502"
       app:layout_constraintStart_toStartOf="parent" />
 
   <EditText
-      android:id="@+id/txtUserRegistro5"
+      android:id="@+id/txtPrimerNombre"
       android:layout_width="226dp"
       android:layout_height="51dp"
       android:layout_marginBottom="16dp"
@@ -62,13 +62,13 @@
       android:inputType="textPersonName"
       android:padding="15dp"
       android:textSize="18sp"
-      app:layout_constraintBottom_toTopOf="@+id/txtUserRegistro3"
+      app:layout_constraintBottom_toTopOf="@+id/txtSegundoNombre"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.502"
       app:layout_constraintStart_toStartOf="parent" />
 
   <EditText
-      android:id="@+id/txtUserRegistro3"
+      android:id="@+id/txtSegundoNombre"
       android:layout_width="226dp"
       android:layout_height="51dp"
       android:layout_marginBottom="16dp"
@@ -82,7 +82,7 @@
       android:inputType="textPersonName"
       android:padding="15dp"
       android:textSize="18sp"
-      app:layout_constraintBottom_toTopOf="@+id/txtUserRegistro6"
+      app:layout_constraintBottom_toTopOf="@+id/txtPrimerApellido"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.497"
       app:layout_constraintStart_toStartOf="parent" />
@@ -94,6 +94,7 @@
       android:layout_margin="10dp"
       android:backgroundTint="@color/colorWhite"
       android:fontFamily="sans-serif"
+      android:onClick="registrarse"
       android:padding="10dp"
       android:text="@string/registrarse"
       android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -192,7 +193,7 @@
       android:layout_width="241dp"
       android:layout_height="70dp"
       android:layout_marginTop="56dp"
-      app:layout_constraintBottom_toTopOf="@+id/txtUserRegistro5"
+      app:layout_constraintBottom_toTopOf="@+id/txtPrimerNombre"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"

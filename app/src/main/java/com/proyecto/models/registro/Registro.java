@@ -23,20 +23,20 @@ public class Registro {
     private String segundoApellido;
     @ColumnInfo(name = "telefono")
     private Long telefono;
-    @ColumnInfo(name = "direccion")
-    private String direccion;
+    @ColumnInfo(name = "correo")
+    private String correo;
     @ColumnInfo(name = "estadoRegistro")
     private int estado;
 
     public Registro(String primerNombre, String segundoNombre, String primerApellido,
-                    String segundoApellido, Long telefono, String direccion) {
+                    String segundoApellido, Long telefono, String correo) {
         this.idRegistro = UUID.randomUUID().toString();
         this.primerNombre = primerNombre;
         this.segundoNombre = segundoNombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
         this.telefono = telefono;
-        this.direccion = direccion;
+        this.correo = correo;
         this.estado = 1;
     }
 
@@ -47,7 +47,7 @@ public class Registro {
     public String getPrimerApellido() { return primerApellido; }
     public String getSegundoApellido() { return segundoApellido; }
     public Long getTelefono() { return telefono; }
-    public String getDireccion() { return direccion; }
+    public String getCorreo() { return correo; }
     public int getEstado() { return estado; }
 
     public void setIdRegistro(@NonNull String idRegistro) { this.idRegistro = idRegistro; }
@@ -56,6 +56,6 @@ public class Registro {
     public void setPrimerApellido(String primerApellido) { this.primerApellido = primerApellido; }
     public void setSegundoApellido(String segundoApellido) { this.segundoApellido = segundoApellido; }
     public void setTelefono(Long telefono) { this.telefono = telefono; }
-    public void setDireccion(String direccion) { this.direccion = direccion; }
+    public void setCorreo(String correo) { this.correo = correo; }
     public void setEstado(int estado) { this.estado = estado; }
 }
