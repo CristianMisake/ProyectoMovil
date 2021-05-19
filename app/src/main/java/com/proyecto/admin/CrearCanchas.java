@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -65,16 +66,22 @@ public class CrearCanchas extends AppCompatActivity {
         String horario = editHorario.getText().toString();
         String direccion = editDireccion.getText().toString();
         String descripcion = editDescripcion.getText().toString();
-        long price = Long.parseLong(editPrice.getText().toString());
-
-        if (idCancha.isEmpty()) {
-            insertCanchaBD(nombre, direccion, price, descripcion, R.drawable.balon, horario);
+        String priceTxt = editPrice.getText().toString();
+        if (TextUtils.isEmpty(nombre) || TextUtils.isEmpty(horario) || TextUtils.isEmpty(direccion)
+                || TextUtils.isEmpty(descripcion) || TextUtils.isEmpty(priceTxt)) {
+            Toast.makeText(this,"Por favor llene todos los campos.", Toast.LENGTH_LONG).show();
         } else {
-            updateCanchaBD(nombre, direccion, price, descripcion, R.drawable.balon, horario);
+            long price = Long.parseLong(priceTxt);
+            if (idCancha.isEmpty()) {
+                insertCanchaBD(nombre, direccion, price, descripcion, R.drawable.balon, horario);
+            } else {
+                updateCanchaBD(nombre, direccion, price, descripcion, R.drawable.balon, horario);
+            }
         }
     }
 
-    private void insertCanchaBD(String name, String address, long price, String description, int urlImg, String schedule) {
+    private void insertCanchaBD(String name, String address, long price, String description,
+                                int urlImg, String schedule) {
         Cancha nuevaCancha = new Cancha(name, address, price, description, urlImg, schedule);
         nCanchasLab.addCancha(nuevaCancha);
         Toast.makeText(this,"Guardado", Toast.LENGTH_SHORT).show();
