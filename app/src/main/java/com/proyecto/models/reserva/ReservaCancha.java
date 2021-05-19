@@ -1,7 +1,6 @@
 package com.proyecto.models.reserva;
 
 public class ReservaCancha {
-
     private String idReserva;
     private String fecha;
     private String horas;

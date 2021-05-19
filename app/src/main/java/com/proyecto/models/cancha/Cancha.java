@@ -25,7 +25,7 @@ public class Cancha {
     private long price;
     @ColumnInfo(name = "urlImg")
     private int urlImg;
-    @ColumnInfo(name = "estado")
+    @ColumnInfo(name = "estadoCancha")
     private int estado;
 
     public Cancha(String name, String address, long price, String description, int urlImg, String schedule) {

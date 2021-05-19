@@ -5,15 +5,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.proyecto.R;
-import com.proyecto.models.cancha.Cancha;
-import com.proyecto.models.cancha.CanchaLab;
 import com.proyecto.models.reserva.AdaptadorReserva;
-import com.proyecto.models.reserva.Reserva;
 import com.proyecto.models.reserva.ReservaCancha;
 import com.proyecto.models.reserva.ReservaLab;
 
@@ -26,7 +22,6 @@ public class ReservasPendientes extends AppCompatActivity {
     private RecyclerView recycler;
 
     private ReservaLab nReservaLab;
-    private CanchaLab nCanchaLab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +47,6 @@ public class ReservasPendientes extends AppCompatActivity {
 
         //Carga de la interfaz DAO para la BD
         nReservaLab = ReservaLab.get(this);
-        nCanchaLab = CanchaLab.get(this);
     }
 
     @Override

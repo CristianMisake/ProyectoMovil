@@ -38,7 +38,7 @@ public class Reserva {
     @ColumnInfo(name = "idCanchaFk")
     private String idCanchaFk;
     @ColumnInfo(name = "estadoReserva")
-    private int estado;
+    private int estadoReserva;
 
     public Reserva(int horas, String fecha, String idUsuarioFk, String idCanchaFk) {
         this.idReserva = UUID.randomUUID().toString();
@@ -46,7 +46,7 @@ public class Reserva {
         this.horas = horas;
         this.idUsuarioFk = idUsuarioFk;
         this.idCanchaFk = idCanchaFk;
-        this.estado = 1;
+        this.estadoReserva = 1;
     }
 
     @NonNull
@@ -56,13 +56,13 @@ public class Reserva {
     public String getIdUsuarioFk() { return idUsuarioFk; }
     public String getIdCanchaFk() { return idCanchaFk; }
 
-    public int getEstado() { return estado; }
+    public int getEstadoReserva() { return estadoReserva; }
 
     public void setIdReserva(@NonNull String idReserva) { this.idReserva = idReserva; }
     public void setHoras(int horas) { this.horas = horas; }
     public void setFecha(String fecha) { this.fecha = fecha; }
     public void setIdUsuarioFk(String idUsuarioFk) { this.idUsuarioFk = idUsuarioFk; }
     public void setIdCanchaFk(String idCanchaFk) { this.idCanchaFk = idCanchaFk; }
-    public void setEstado(int estado) { this.estado = estado; }
+    public void setEstadoReserva(int estadoReserva) { this.estadoReserva = estadoReserva; }
 }
 
