@@ -25,4 +25,7 @@ public interface UsuarioDao {
 
     @Query("UPDATE usuarios SET estado = 0 WHERE idUsuario = :uid")
     void deleteUsuario(String uid);
+
+    @Query("SELECT * FROM usuarios WHERE estado = 1 AND usuario = :usuario AND password = :password")
+    List<Usuario> getLogin(String usuario, String password);
 }

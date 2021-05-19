@@ -42,4 +42,9 @@ public class UsuarioLab implements UsuarioDao {
 
     @Override
     public void deleteUsuario(String uid) { nUsuarioDao.deleteUsuario(uid); }
+
+    @Override
+    public List<Usuario> getLogin(String usuario, String password) {
+        return nUsuarioDao.getLogin(usuario, password);
+    }
 }
