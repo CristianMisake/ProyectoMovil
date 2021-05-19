@@ -13,7 +13,7 @@ import java.util.List;
 @Dao
 public interface ReservaDao {
 
-    @Query("SELECT R.idReserva, R.fecha, R.horas, C.nombre, C.price, C.urlImg, " +
+    @Query("SELECT R.idReserva, R.fecha, R.horas, C.nombre, C.direccion, C.price, C.urlImg, " +
             "RE.primerNombre, RE.segundoNombre, RE.primerApellido, RE.segundoApellido " +
             "FROM reservas R " +
             "INNER JOIN canchas C ON C.idCancha = R.idCanchaFk " +
@@ -22,7 +22,7 @@ public interface ReservaDao {
             "WHERE R.estadoReserva = 1")
     List<ReservaCancha> getReservas();
 
-    @Query("SELECT R.idReserva, R.fecha, R.horas, C.nombre, C.price, C.urlImg, " +
+    @Query("SELECT R.idReserva, R.fecha, R.horas, C.nombre, C.direccion, C.price, C.urlImg, " +
             "RE.primerNombre, RE.segundoNombre, RE.primerApellido, RE.segundoApellido " +
             "FROM reservas R " +
             "INNER JOIN canchas C ON C.idCancha = R.idCanchaFk " +

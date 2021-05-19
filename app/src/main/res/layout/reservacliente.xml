@@ -19,7 +19,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtNameCanchaR"
+            android:id="@+id/txtNameCanchaCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -27,7 +27,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtPriceCanchaR"
+            android:id="@+id/txtPriceCanchaCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -35,12 +35,12 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/txtFechaReserva"
+            android:id="@+id/txtFechaReservaCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/txtHorasReserva"
+            android:id="@+id/txtHorasReservaCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5sp"
@@ -48,7 +48,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/txtDireccion"
+            android:id="@+id/txtDireccionCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5sp"

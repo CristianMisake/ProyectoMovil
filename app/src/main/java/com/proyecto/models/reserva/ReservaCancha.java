@@ -5,6 +5,7 @@ public class ReservaCancha {
     private String fecha;
     private String horas;
     private String nombre;
+    private String direccion;
     private Long price;
     private int urlImg;
     private String primerNombre;
@@ -12,13 +13,14 @@ public class ReservaCancha {
     private String primerApellido;
     private String segundoApellido;
 
-    public ReservaCancha(String idReserva, String fecha, String horas, String nombre, long price,
+    public ReservaCancha(String idReserva, String fecha, String horas, String nombre, String direccion, long price,
                          int urlImg, String primerNombre, String segundoNombre,
                          String primerApellido, String segundoApellido) {
         this.idReserva = idReserva;
         this.fecha = fecha;
         this.horas = horas;
         this.nombre = nombre;
+        this.direccion = direccion;
         this.price = price;
         this.urlImg = urlImg;
         this.primerNombre = primerNombre;
@@ -31,6 +33,7 @@ public class ReservaCancha {
     public String getFecha() { return fecha; }
     public String getHoras() { return horas; }
     public String getNombre() { return nombre; }
+    public String getDireccion() { return direccion;}
     public Long getPrice() { return price; }
     public int getUrlImg() { return urlImg; }
     public String getPrimerNombre() { return primerNombre; }
@@ -42,6 +45,7 @@ public class ReservaCancha {
     public void setFecha(String fecha) { this.fecha = fecha; }
     public void setHoras(String horas) { this.horas = horas; }
     public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setDireccion(String direccion) { this.direccion = direccion; }
     public void setPrice(Long price) { this.price = price; }
     public void setUrlImg(int urlImg) { this.urlImg = urlImg; }
     public void setPrimerNombre(String primerNombre) { this.primerNombre = primerNombre; }
