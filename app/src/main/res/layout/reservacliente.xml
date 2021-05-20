@@ -7,7 +7,7 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/imgCanchaR"
+        android:id="@+id/imgCanchaCliente"
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:contentDescription="@string/content_descripcion_img" />

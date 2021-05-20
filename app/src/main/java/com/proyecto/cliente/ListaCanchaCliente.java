@@ -5,20 +5,26 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.proyecto.R;
+import com.proyecto.admin.CrearCanchas;
+import com.proyecto.models.cancha.AdaptadorCancha;
 import com.proyecto.models.cancha.Cancha;
 import com.proyecto.models.cancha.CanchaLab;
-import com.proyecto.models.reserva.AdaptadoReservaCliente;
+import com.proyecto.models.reserva.AdaptadorCliente;
+import com.proyecto.models.reserva.ReservaCancha;
+import com.proyecto.models.reserva.ReservaLab;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class activity_lista_cancha_cliente extends AppCompatActivity {
+public class ListaCanchaCliente extends AppCompatActivity {
     private ArrayList<Cancha> listadoCanchasCliente = new ArrayList<>();
-    private AdaptadoReservaCliente adapterCliente;
+    private AdaptadorCliente adapterCliente;
     private RecyclerView recyclerCliente;
 
     private CanchaLab nCanchasLab;
@@ -26,12 +32,11 @@ public class activity_lista_cancha_cliente extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.reservacliente);
-
+        setContentView(R.layout.activity_lista_cancha_cliente);
 
         recyclerCliente = findViewById(R.id.recyclerCanchasCliente);
-        RecyclerView.LayoutManager layoutManagerCliente = new LinearLayoutManager(getApplicationContext());
-        recyclerCliente.setLayoutManager(layoutManagerCliente);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerCliente.setLayoutManager(layoutManager);
         recyclerCliente.setItemAnimator(new DefaultItemAnimator());
         recyclerCliente.setAdapter(adapterCliente);
 
