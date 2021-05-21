@@ -48,7 +48,7 @@ public class AdaptadorCancha extends RecyclerView.Adapter<AdaptadorCancha.MyView
     public void onBindViewHolder(@NonNull AdaptadorCancha.MyViewHolder holder, int position) {
         Cancha canchaActual = listadoCanchas.get(position);
         holder.name.setText(canchaActual.getName());
-        holder.price.setText("precio: " + canchaActual.getPrice());
+        holder.price.setText("Precio: " + canchaActual.getPrice());
         holder.descripcion.setText(canchaActual.getDescription());
         holder.imageFoto.setImageResource(canchaActual.getUrlImg());
         holder.schedule.setText(canchaActual.getSchedule());

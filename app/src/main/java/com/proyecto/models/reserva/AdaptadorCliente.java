@@ -49,11 +49,10 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.MyVi
     public void onBindViewHolder(@NonNull AdaptadorCliente.MyViewHolder holder, int position) {
         Cancha canchaActualCliente = listadoReservasCliente.get(position);
         holder.name.setText(canchaActualCliente.getName());
-        holder.price.setText("precio: " + canchaActualCliente.getPrice());
-        holder.hora.setText(canchaActualCliente.getSchedule());
+        holder.price.setText("Precio: " + canchaActualCliente.getPrice());
         holder.descripcion.setText(canchaActualCliente.getDescription());
-        holder.direccion.setText(canchaActualCliente.getAddress());
         holder.imageFoto.setImageResource(canchaActualCliente.getUrlImg());
+        holder.schedule.setText(canchaActualCliente.getSchedule());
         holder.cancha = canchaActualCliente;
 
         holder.reservar.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +71,7 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.MyVi
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView name;
         public TextView price;
-        public TextView hora;
+        public TextView schedule;
         public TextView descripcion;
         public TextView direccion;
         public ImageView imageFoto;
@@ -83,7 +82,7 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.MyVi
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.txtNameCanchaCliente);
             price = (TextView) itemView.findViewById(R.id.txtPriceCanchaCliente);
-            hora = (TextView) itemView.findViewById(R.id.txtHorasReservaCliente);
+            schedule = (TextView) itemView.findViewById(R.id.txtScheduleCanchaCliente);
             descripcion = (TextView) itemView.findViewById(R.id.txtDescripcionReservaCliente);
             direccion = (TextView) itemView.findViewById(R.id.txtDireccionCliente);
             imageFoto = (ImageView) itemView.findViewById(R.id.imgCanchaCliente);
