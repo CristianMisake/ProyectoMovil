@@ -43,6 +43,7 @@ public class ListaCanchas extends AppCompatActivity {
                 deleteBDCanchas(cancha);
             }
         });
+
         recycler = findViewById(R.id.recyclerCanchas);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recycler.setLayoutManager(layoutManager);

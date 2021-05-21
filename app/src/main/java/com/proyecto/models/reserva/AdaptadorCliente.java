@@ -19,16 +19,16 @@ import com.proyecto.models.cancha.Cancha;
 import java.util.ArrayList;
 
 public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.MyViewHolder> {
-    private ArrayList<ReservaCancha> listadoReservasCliente;
+    private ArrayList<Cancha> listadoReservasCliente;
     private Context contextCliente;
     private Onclick clickReserva;
 
 
     public interface Onclick {
-        void OnEvent(ReservaCancha reservaCliente, int posC);
+        void OnEvent(Cancha canchaC, int posC);
     }
 
-    public AdaptadorCliente(Context contextCliente, ArrayList<ReservaCancha> listadoReservasCliente,
+    public AdaptadorCliente(Context contextCliente, ArrayList<Cancha> listadoReservasCliente,
                             Onclick clickReserva) {
         this.contextCliente = contextCliente;
         this.listadoReservasCliente = listadoReservasCliente;
@@ -47,19 +47,19 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.MyVi
 
     @Override
     public void onBindViewHolder(@NonNull AdaptadorCliente.MyViewHolder holder, int position) {
-        ReservaCancha canchaActual = listadoReservasCliente.get(position);
-        holder.name.setText(canchaActual.getNombre());
-        holder.price.setText("precio: " + canchaActual.getPrice());
-        holder.hora.setText(canchaActual.getHoras());
-        holder.fecha.setText(canchaActual.getFecha());
-        holder.direccion.setText(canchaActual.getDireccion());
-        holder.imageFoto.setImageResource(canchaActual.getUrlImg());
-        holder.reserva = canchaActual;
+        Cancha canchaActualCliente = listadoReservasCliente.get(position);
+        holder.name.setText(canchaActualCliente.getName());
+        holder.price.setText("precio: " + canchaActualCliente.getPrice());
+        holder.hora.setText(canchaActualCliente.getSchedule());
+        holder.descripcion.setText(canchaActualCliente.getDescription());
+        holder.direccion.setText(canchaActualCliente.getAddress());
+        holder.imageFoto.setImageResource(canchaActualCliente.getUrlImg());
+        holder.cancha = canchaActualCliente;
 
         holder.reservar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickReserva.OnEvent(canchaActual, position);
+                clickReserva.OnEvent(canchaActualCliente, position);
             }
         });
     }
@@ -73,10 +73,10 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.MyVi
         public TextView name;
         public TextView price;
         public TextView hora;
-        public TextView fecha;
+        public TextView descripcion;
         public TextView direccion;
         public ImageView imageFoto;
-        public ReservaCancha reserva;
+        public Cancha cancha;
         public Button reservar;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -84,7 +84,7 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.MyVi
             name = (TextView) itemView.findViewById(R.id.txtNameCanchaCliente);
             price = (TextView) itemView.findViewById(R.id.txtPriceCanchaCliente);
             hora = (TextView) itemView.findViewById(R.id.txtHorasReservaCliente);
-            fecha = (TextView) itemView.findViewById(R.id.txtFechaReservaCliente);
+            descripcion = (TextView) itemView.findViewById(R.id.txtDescripcionReservaCliente);
             direccion = (TextView) itemView.findViewById(R.id.txtDireccionCliente);
             imageFoto = (ImageView) itemView.findViewById(R.id.imgCanchaCliente);
             reservar = (Button) itemView.findViewById(R.id.btnReservar);

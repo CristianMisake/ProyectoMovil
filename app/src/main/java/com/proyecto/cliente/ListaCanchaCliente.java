@@ -34,6 +34,13 @@ public class ListaCanchaCliente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_cancha_cliente);
 
+        adapterCliente = new AdaptadorCliente(this, listadoCanchasCliente, new AdaptadorCliente.Onclick(){
+            @Override
+            public void OnEvent(Cancha canchaC, int posC) {
+                reservadoBDCanchas(canchaC);
+            }
+        });
+
         recyclerCliente = findViewById(R.id.recyclerCanchasCliente);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerCliente.setLayoutManager(layoutManager);
@@ -55,6 +62,12 @@ public class ListaCanchaCliente extends AppCompatActivity {
         listadoCanchasCliente.clear();
         List<Cancha> canchas = nCanchasLab.getCanchas();
         listadoCanchasCliente.addAll(canchas);
+    }
+
+    private void reservadoBDCanchas(Cancha cancha) {
+        nCanchasLab.deleteCancha(cancha.getIdCancha());
+        leerBDCanchas();
+        Toast.makeText(this,"Reservado: " + cancha.getName(), Toast.LENGTH_SHORT).show();
     }
 
 }
