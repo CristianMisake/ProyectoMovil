@@ -29,4 +29,8 @@
     <string name="eliminarcancha">Eliminar Cancha</string>
     <string name="reservacliente">Reserva</string>
     <string name="btnreservarcliente">R</string>
+    <string name="Fecha">Fecha</string>
+    <string name="calendario">Calendario</string>
+    <string name="Hora">Hora</string>
+    <string name="Reservar">Reservar</string>
 </resources>

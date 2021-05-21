@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CalendarView;
 import android.widget.Toast;
 
 import com.proyecto.R;
@@ -37,7 +38,7 @@ public class ListaCanchaCliente extends AppCompatActivity {
         adapterCliente = new AdaptadorCliente(this, listadoCanchasCliente, new AdaptadorCliente.Onclick(){
             @Override
             public void OnEvent(Cancha canchaC, int posC) {
-                reservadoBDCanchas(canchaC);
+                reservadoBDCanchas();
             }
         });
 
@@ -64,10 +65,9 @@ public class ListaCanchaCliente extends AppCompatActivity {
         listadoCanchasCliente.addAll(canchas);
     }
 
-    private void reservadoBDCanchas(Cancha cancha) {
-        nCanchasLab.deleteCancha(cancha.getIdCancha());
-        leerBDCanchas();
-        Toast.makeText(this,"Reservado: " + cancha.getName(), Toast.LENGTH_SHORT).show();
+    private void reservadoBDCanchas() {
+        Intent intent = new Intent(this, vistaReservaCliente.class);
+        startActivity(intent);
     }
 
 }

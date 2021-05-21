@@ -26,4 +26,10 @@ public class MainClient extends AppCompatActivity {
         Intent intent = new Intent(this, ListaCanchaCliente.class);
         startActivity(intent);
     }
+    public void goReservaCliente(View view) {
+        //Invocar a la tercera actividad
+        Intent intent = new Intent(this, vistaReservaCliente.class);
+        startActivity(intent);
+    }
+
 }

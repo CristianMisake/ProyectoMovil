@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".cliente.ListaCanchaCliente"></activity>
+        <activity android:name=".cliente.vistaReservaCliente"></activity>
+        <activity android:name=".cliente.ListaCanchaCliente" />
         <activity android:name=".admin.ListaCanchas" />
         <activity android:name=".admin.ReservasPendientes" />
         <activity android:name=".admin.CrearCanchas" />
