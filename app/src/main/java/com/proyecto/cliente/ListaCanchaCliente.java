@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaCanchaCliente extends AppCompatActivity {
+    public static final String id_reserva = "com.proyecto.admin.idReserva";
     private ArrayList<Cancha> listadoCanchasCliente = new ArrayList<>();
     private AdaptadorCliente adapterCliente;
     private RecyclerView recyclerCliente;
