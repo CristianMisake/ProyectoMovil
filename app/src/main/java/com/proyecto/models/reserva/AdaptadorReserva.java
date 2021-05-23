@@ -11,6 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.proyecto.R;
+import com.proyecto.models.cancha.Cancha;
+import com.proyecto.models.cancha.CanchaLab;
+import com.proyecto.models.registro.Registro;
+import com.proyecto.models.registro.RegistroLab;
+import com.proyecto.models.usuario.UsuarioLab;
 
 import java.util.ArrayList;
 
@@ -18,13 +23,14 @@ public class AdaptadorReserva extends RecyclerView.Adapter<AdaptadorReserva.MyVi
     private ArrayList<ReservaCancha> listadoReservas;
     private Context context;
     private Onclick clickAceptar;
-    private Onclick clickRechazar;
+    private Onclick clickRechazar;;
 
     public interface Onclick {
         void OnEvent(ReservaCancha reserva, int pos);
     }
 
-    public AdaptadorReserva(Context context, ArrayList<ReservaCancha> listadoReservas,
+    public AdaptadorReserva(Context context,
+                            ArrayList<ReservaCancha> listadoReservas,
                            Onclick clickAceptar, Onclick clickRechazar) {
         this.context = context;
         this.listadoReservas = listadoReservas;
@@ -45,17 +51,15 @@ public class AdaptadorReserva extends RecyclerView.Adapter<AdaptadorReserva.MyVi
     @Override
     public void onBindViewHolder(@NonNull AdaptadorReserva.MyViewHolder holder, int position) {
         ReservaCancha reservaActual = listadoReservas.get(position);
-        String nameUsuario = reservaActual.getPrimerNombre() + " "
+                String nameUsuario = reservaActual.getPrimerNombre() + " "
                 + reservaActual.getSegundoNombre() + " " + reservaActual.getPrimerApellido()
                 + " " + reservaActual.getSegundoApellido();
         String price = "precio: " + reservaActual.getPrice();
-
         holder.name.setText(reservaActual.getNombre());
         holder.nameUsuario.setText(nameUsuario);
         holder.price.setText(price);
         holder.fecha.setText("fecha: " + reservaActual.getFecha());
         holder.horas.setText("hora: " + reservaActual.getHoras());
-        holder.reserva = reservaActual;
         holder.aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,7 +85,6 @@ public class AdaptadorReserva extends RecyclerView.Adapter<AdaptadorReserva.MyVi
         public TextView price;
         public TextView fecha;
         public TextView horas;
-        public ReservaCancha reserva;
         public Button aceptar;
         public Button rechazar;
 

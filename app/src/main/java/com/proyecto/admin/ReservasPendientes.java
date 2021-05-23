@@ -9,10 +9,13 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.proyecto.R;
+import com.proyecto.models.cancha.CanchaLab;
+import com.proyecto.models.registro.RegistroLab;
 import com.proyecto.models.reserva.AdaptadorReserva;
+import com.proyecto.models.reserva.Reserva;
 import com.proyecto.models.reserva.ReservaCancha;
-import com.proyecto.models.reserva.ReservaCanchaLab;
 import com.proyecto.models.reserva.ReservaLab;
+import com.proyecto.models.usuario.UsuarioLab;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +25,6 @@ public class ReservasPendientes extends AppCompatActivity {
     private AdaptadorReserva adapter;
     private RecyclerView recycler;
 
-    private ReservaCanchaLab nReservaCanchaLab;
     private ReservaLab nReservaLab;
 
     @Override
@@ -30,15 +32,17 @@ public class ReservasPendientes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservas_pendientes);
 
-        adapter = new AdaptadorReserva(this, listadoReservas, new AdaptadorReserva.Onclick() {
+
+        adapter = new AdaptadorReserva(this, listadoReservas,
+                new AdaptadorReserva.Onclick() {
             @Override
-            public void OnEvent(ReservaCancha reserva, int pos) {
-                acceptBDReserva(reserva);
+            public void OnEvent(ReservaCancha reservaCancha, int pos) {
+                acceptBDReserva(reservaCancha);
             }
         }, new AdaptadorReserva.Onclick() {
             @Override
-            public void OnEvent(ReservaCancha reserva, int pos) {
-                rejectBDReserva(reserva);
+            public void OnEvent(ReservaCancha reservaCancha, int pos) {
+                rejectBDReserva(reservaCancha);
             }
         });
         recycler = findViewById(R.id.recyclerPendientes);
@@ -48,7 +52,6 @@ public class ReservasPendientes extends AppCompatActivity {
         recycler.setAdapter(adapter);
 
         //Carga de la interfaz DAO para la BD
-        nReservaCanchaLab = ReservaCanchaLab.get(this);
         nReservaLab = ReservaLab.get(this);
     }
 
@@ -62,21 +65,25 @@ public class ReservasPendientes extends AppCompatActivity {
 
     private void leerBDReservas() {
         listadoReservas.clear();
-        List<ReservaCancha> reservas = nReservaCanchaLab.getReservas();
+        List<ReservaCancha> reservas = nReservaLab.getReservas();
+        List<Reserva> reservas2 = nReservaLab.getReservasAll();
+        if (reservas2.size() > 0) {
+            Toast.makeText(this,"Miau: " + reservas2.size() + " " + reservas.size(), Toast.LENGTH_SHORT).show();
+        }
         listadoReservas.addAll(reservas);
     }
 
-    private void acceptBDReserva(ReservaCancha reserva) {
-        nReservaLab.acceptReserva(reserva.getIdReserva());
+    private void acceptBDReserva(ReservaCancha reservaCancha) {
+        nReservaLab.acceptReserva(reservaCancha.getIdReserva());
         leerBDReservas();
         adapter.notifyDataSetChanged(); //Notificar los cambios en el modelo
-        Toast.makeText(this,"Aceptado: " + reserva.getNombre(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Aceptado: " + reservaCancha.getNombre(), Toast.LENGTH_SHORT).show();
     }
 
-    public void rejectBDReserva(ReservaCancha reserva) {
-        nReservaLab.rejectReserva(reserva.getIdReserva());
+    public void rejectBDReserva(ReservaCancha reservaCancha) {
+        nReservaLab.rejectReserva(reservaCancha.getIdReserva());
         leerBDReservas();
         adapter.notifyDataSetChanged(); //Notificar los cambios en el modelo
-        Toast.makeText(this,"Rechazado: " + reserva.getNombre(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Rechazado: " + reservaCancha.getNombre(), Toast.LENGTH_SHORT).show();
     }
 }

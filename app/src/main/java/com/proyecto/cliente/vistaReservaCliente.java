@@ -81,20 +81,20 @@ public class vistaReservaCliente extends AppCompatActivity {
         TextView editFecha = findViewById(R.id.txtFechaCliente);
         TextView editHora = findViewById(R.id.txtHoraCliente);
 
-        String hora = editFecha.getText().toString();
-        String fecha = editHora.getText().toString();
+        String horas = editHora.getText().toString();
+        String fecha = editFecha.getText().toString();
 
-        if (TextUtils.isEmpty(hora) || TextUtils.isEmpty(fecha)) {
+        if (TextUtils.isEmpty(horas) || TextUtils.isEmpty(fecha) || TextUtils.isEmpty(idUsuario) || TextUtils.isEmpty(idCancha)) {
             Toast.makeText(this,"Por favor llene todos los campos.", Toast.LENGTH_LONG).show();
         } else {
-            insertCanchaBD(hora, fecha);
+            insertCanchaBD(horas, fecha);
         }
     }
 
-    private void insertCanchaBD(String hora, String fecha) {
-        Reserva nuevaReserva = new Reserva(hora, fecha, idUsuario, idCancha);
+    private void insertCanchaBD(String horas, String fecha) {
+        Reserva nuevaReserva = new Reserva(horas, fecha, idUsuario, idCancha);
         nReservalab.addReserva(nuevaReserva);
         Toast.makeText(this,"Guardado", Toast.LENGTH_SHORT).show();
-        //finish();
+        finish();
     }
 }

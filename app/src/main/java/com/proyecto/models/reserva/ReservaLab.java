@@ -18,7 +18,9 @@ public class ReservaLab implements ReservaDao {
     private ReservaLab(Context context) {
         Context appContext = context.getApplicationContext();
         ReservaDataBase dataBase = Room.databaseBuilder(appContext, ReservaDataBase.class, "reservas")
-                .allowMainThreadQueries().build();
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build();
         nReservaDao = dataBase.getReservaDao();
     }
 
@@ -28,6 +30,12 @@ public class ReservaLab implements ReservaDao {
         }
         return nReservaLab;
     }
+
+    @Override
+    public List<ReservaCancha> getReservas() { return nReservaDao.getReservas(); }
+
+    @Override
+    public List<Reserva> getReservasAll() { return nReservaDao.getReservasAll(); }
 
     @Override
     public void addReserva(Reserva reserva) { nReservaDao.addReserva(reserva); }
