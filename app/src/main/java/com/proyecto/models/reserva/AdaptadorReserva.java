@@ -53,8 +53,8 @@ public class AdaptadorReserva extends RecyclerView.Adapter<AdaptadorReserva.MyVi
         holder.name.setText(reservaActual.getNombre());
         holder.nameUsuario.setText(nameUsuario);
         holder.price.setText(price);
-        holder.fecha.setText(reservaActual.getFecha());
-        holder.horas.setText(reservaActual.getHoras());
+        holder.fecha.setText("fecha: " + reservaActual.getFecha());
+        holder.horas.setText("hora: " + reservaActual.getHoras());
         holder.reserva = reservaActual;
         holder.aceptar.setOnClickListener(new View.OnClickListener() {
             @Override

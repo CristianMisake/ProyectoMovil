@@ -2,16 +2,22 @@ package com.proyecto.cliente;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.proyecto.R;
+import com.proyecto.models.reserva.Reserva;
+import com.proyecto.models.reserva.ReservaLab;
+import com.proyecto.vista_principal.Login;
 import com.proyecto.vista_principal.MainActivity;
 
 import java.sql.Time;
@@ -21,6 +27,9 @@ import java.util.Calendar;
 public class vistaReservaCliente extends AppCompatActivity {
     TextView tv,tv2;
     private Object TimePickerDialog;
+    private ReservaLab nReservalab;
+    private String idUsuario;
+    private String idCancha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +37,15 @@ public class vistaReservaCliente extends AppCompatActivity {
         setContentView(R.layout.activity_vista_reserva_cliente);
         tv = findViewById(R.id.txtFechaCliente);
         tv2 = findViewById(R.id.txtHoraCliente);
+
+        nReservalab = ReservaLab.get(this);
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent intent = getIntent();
+        idCancha = intent.getStringExtra(ListaCanchaCliente.ID_CANCHA);
+        idUsuario = intent.getStringExtra(Login.ID_USUARIO);
     }
 
     public void abrirCalendario(View view) {
@@ -57,5 +75,26 @@ public class vistaReservaCliente extends AppCompatActivity {
             }
         },hora,min, false);
         tmd.show();
+    }
+
+    public void guardarCancha(View view) {
+        TextView editFecha = findViewById(R.id.txtFechaCliente);
+        TextView editHora = findViewById(R.id.txtHoraCliente);
+
+        String hora = editFecha.getText().toString();
+        String fecha = editHora.getText().toString();
+
+        if (TextUtils.isEmpty(hora) || TextUtils.isEmpty(fecha)) {
+            Toast.makeText(this,"Por favor llene todos los campos.", Toast.LENGTH_LONG).show();
+        } else {
+            insertCanchaBD(hora, fecha);
+        }
+    }
+
+    private void insertCanchaBD(String hora, String fecha) {
+        Reserva nuevaReserva = new Reserva(hora, fecha, idUsuario, idCancha);
+        nReservalab.addReserva(nuevaReserva);
+        Toast.makeText(this,"Guardado", Toast.LENGTH_SHORT).show();
+        //finish();
     }
 }

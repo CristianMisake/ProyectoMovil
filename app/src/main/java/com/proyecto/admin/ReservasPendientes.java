@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.proyecto.R;
 import com.proyecto.models.reserva.AdaptadorReserva;
 import com.proyecto.models.reserva.ReservaCancha;
+import com.proyecto.models.reserva.ReservaCanchaLab;
 import com.proyecto.models.reserva.ReservaLab;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class ReservasPendientes extends AppCompatActivity {
     private AdaptadorReserva adapter;
     private RecyclerView recycler;
 
+    private ReservaCanchaLab nReservaCanchaLab;
     private ReservaLab nReservaLab;
 
     @Override
@@ -46,6 +48,7 @@ public class ReservasPendientes extends AppCompatActivity {
         recycler.setAdapter(adapter);
 
         //Carga de la interfaz DAO para la BD
+        nReservaCanchaLab = ReservaCanchaLab.get(this);
         nReservaLab = ReservaLab.get(this);
     }
 
@@ -59,7 +62,7 @@ public class ReservasPendientes extends AppCompatActivity {
 
     private void leerBDReservas() {
         listadoReservas.clear();
-        List<ReservaCancha> reservas = nReservaLab.getReservas();
+        List<ReservaCancha> reservas = nReservaCanchaLab.getReservas();
         listadoReservas.addAll(reservas);
     }
 

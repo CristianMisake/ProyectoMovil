@@ -111,6 +111,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorWhite"
         android:fontFamily="sans-serif"
+        android:onClick="guardarCancha"
         android:text="@string/Reservar"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/black"

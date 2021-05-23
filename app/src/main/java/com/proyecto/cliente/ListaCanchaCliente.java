@@ -19,17 +19,20 @@ import com.proyecto.models.cancha.CanchaLab;
 import com.proyecto.models.reserva.AdaptadorCliente;
 import com.proyecto.models.reserva.ReservaCancha;
 import com.proyecto.models.reserva.ReservaLab;
+import com.proyecto.vista_principal.Login;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListaCanchaCliente extends AppCompatActivity {
-    public static final String id_reserva = "com.proyecto.admin.idReserva";
+    public static final String ID_RESERVA = "com.proyecto.client.idReserva";
+    public static final String ID_CANCHA = "com.proyecto.client.idCancha";
     private ArrayList<Cancha> listadoCanchasCliente = new ArrayList<>();
     private AdaptadorCliente adapterCliente;
     private RecyclerView recyclerCliente;
 
     private CanchaLab nCanchasLab;
+    private String idUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,7 @@ public class ListaCanchaCliente extends AppCompatActivity {
         adapterCliente = new AdaptadorCliente(this, listadoCanchasCliente, new AdaptadorCliente.Onclick(){
             @Override
             public void OnEvent(Cancha canchaC, int posC) {
-                reservadoBDCanchas();
+                reservadoBDCanchas(canchaC);
             }
         });
 
@@ -56,6 +59,8 @@ public class ListaCanchaCliente extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        Intent intent = getIntent();
+        idUsuario = intent.getStringExtra(Login.ID_USUARIO);
         leerBDCanchas();
         Toast.makeText(this,"Listado", Toast.LENGTH_SHORT).show();
     }
@@ -66,8 +71,10 @@ public class ListaCanchaCliente extends AppCompatActivity {
         listadoCanchasCliente.addAll(canchas);
     }
 
-    private void reservadoBDCanchas() {
+    private void reservadoBDCanchas(Cancha cancha) {
         Intent intent = new Intent(this, vistaReservaCliente.class);
+        intent.putExtra(ID_CANCHA, cancha.getIdCancha());
+        intent.putExtra(Login.ID_USUARIO, idUsuario);
         startActivity(intent);
     }
 

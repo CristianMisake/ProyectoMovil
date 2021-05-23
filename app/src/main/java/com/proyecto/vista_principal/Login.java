@@ -18,6 +18,7 @@ import java.util.List;
 
 public class Login extends AppCompatActivity {
     private UsuarioLab nUsuarioLab;
+    public static final String ID_USUARIO = "com.proyecto.vistaPrincipal.idUsuario";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +38,14 @@ public class Login extends AppCompatActivity {
         if(usuarios.isEmpty()){
             Toast.makeText(this, "Usuario o contraseña no coinciden", Toast.LENGTH_SHORT).show();
         }else {
-            if(usuarios.get(0).getUsuario().equals("admin")){
+            Usuario usuario1 = usuarios.get(0);
+            if(usuario1.getUsuario().equals("admin")){
                 Intent intent = new Intent(this, MainAdmin.class);
                 startActivity(intent);
                 Toast.makeText(this, "admin", Toast.LENGTH_SHORT).show();
             }else{
                 Intent intent = new Intent(this, MainClient.class);
+                intent.putExtra(ID_USUARIO, usuario1.getIdUsuario());
                 startActivity(intent);
                 Toast.makeText(this, "cliente", Toast.LENGTH_SHORT).show();
             }
