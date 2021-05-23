@@ -17,7 +17,9 @@ public class UsuarioLab implements UsuarioDao {
     public UsuarioLab(Context context) {
         Context appContext = context.getApplicationContext();
         UsuarioDataBase dataBase = Room.databaseBuilder(appContext, UsuarioDataBase.class, "usuarios")
-                .allowMainThreadQueries().build();
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build();
         nUsuarioDao = dataBase.getUsuarioDao();
     }
 

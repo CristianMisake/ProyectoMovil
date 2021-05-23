@@ -7,6 +7,7 @@ import androidx.room.Update;
 
 import com.proyecto.models.reserva.Reserva;
 import com.proyecto.models.reserva.ReservaCancha;
+import com.proyecto.models.reserva.ReservaCanchaTest;
 
 import java.util.List;
 
@@ -21,6 +22,12 @@ public interface ReservaDao {
             "INNER JOIN registros RE ON RE.idRegistro = U.idRegistroFk " +
             "WHERE R.estadoReserva = 1")
     List<ReservaCancha> getReservas();
+
+    @Query("SELECT R.* " +
+            "FROM reservas R " +
+            "INNER JOIN usuarios U ON U.idUsuario = R.idUsuarioFk " +
+            "WHERE R.estadoReserva = 1")
+    List<Reserva> getReservasTest();
 
     @Query("SELECT * FROM reservas WHERE estadoReserva = 1")
     List<Reserva> getReservasAll();

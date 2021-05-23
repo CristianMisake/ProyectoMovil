@@ -19,7 +19,9 @@ public class CanchaLab implements CanchaDao {
     private CanchaLab(Context context) {
         Context appContext = context.getApplicationContext();
         CanchaDataBase dataBase = Room.databaseBuilder(appContext, CanchaDataBase.class, "canchas")
-                .allowMainThreadQueries().build();
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build();
         sCanchaDao = dataBase.getCanchaDao();
     }
 

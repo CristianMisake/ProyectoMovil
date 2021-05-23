@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.proyecto.R;
+import com.proyecto.models.cancha.Cancha;
 import com.proyecto.models.cancha.CanchaLab;
 import com.proyecto.models.registro.RegistroLab;
 import com.proyecto.models.reserva.AdaptadorReserva;
 import com.proyecto.models.reserva.Reserva;
 import com.proyecto.models.reserva.ReservaCancha;
+import com.proyecto.models.reserva.ReservaCanchaTest;
 import com.proyecto.models.reserva.ReservaLab;
 import com.proyecto.models.usuario.UsuarioLab;
 
@@ -66,9 +68,10 @@ public class ReservasPendientes extends AppCompatActivity {
     private void leerBDReservas() {
         listadoReservas.clear();
         List<ReservaCancha> reservas = nReservaLab.getReservas();
-        List<Reserva> reservas2 = nReservaLab.getReservasAll();
+        List<Reserva> reservas2 = nReservaLab.getReservasTest();
+
         if (reservas2.size() > 0) {
-            Toast.makeText(this,"Miau: " + reservas2.size() + " " + reservas.size(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Miau: " + reservas2.size(), Toast.LENGTH_SHORT).show();
         }
         listadoReservas.addAll(reservas);
     }

@@ -35,6 +35,9 @@ public class ReservaLab implements ReservaDao {
     public List<ReservaCancha> getReservas() { return nReservaDao.getReservas(); }
 
     @Override
+    public List<Reserva> getReservasTest() { return nReservaDao.getReservasTest(); }
+
+    @Override
     public List<Reserva> getReservasAll() { return nReservaDao.getReservasAll(); }
 
     @Override

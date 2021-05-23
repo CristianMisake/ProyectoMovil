@@ -12,7 +12,6 @@ import com.proyecto.models.usuario.Usuario;
 
 import java.util.UUID;
 
-
 @Entity(tableName = "reservas")
 public class Reserva {
     @PrimaryKey

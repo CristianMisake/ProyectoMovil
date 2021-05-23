@@ -17,7 +17,9 @@ public class RegistroLab implements RegistroDao {
     public RegistroLab(Context context) {
         Context appContext = context.getApplicationContext();
         RegistroDataBase dataBase = Room.databaseBuilder(appContext, RegistroDataBase.class, "registros")
-                .allowMainThreadQueries().build();
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build();
         nRegistroDao = dataBase.getRegistroDao();
     }
 
